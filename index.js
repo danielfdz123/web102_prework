@@ -57,6 +57,7 @@ function addGamesToPage(games) {
 // later, we'll call this function using a different list of games
 addGamesToPage(GAMES_JSON);
 
+
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
  * total number of contributions, amount donated, and number of games on the site.
@@ -68,19 +69,34 @@ const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
 
+    // sum = sum + total contributions
+const totalContributions = GAMES_JSON.reduce(
+    (sum, game) => sum + game.backers, 0,
+);
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
-
+contributionsCard.innerHTML = `
+    <p> ${totalContributions.toLocaleString()} </p>
+`;
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
+    
+    // sum = sum + total pledged
+const totalRaised = GAMES_JSON.reduce(
+    (sum, game) => sum + game.pledged, 0
+);
 
 // set inner HTML using template literal
-
+raisedCard.innerHTML = `
+    <p> $${totalRaised.toLocaleString()} </p>
+`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-
+gamesCard.innerHTML = `
+    <p> ${GAMES_JSON.length} </p>
+`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
