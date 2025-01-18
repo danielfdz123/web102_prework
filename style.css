@@ -62,7 +62,6 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
-    overflow: hidden; 
 }
 
 .game-card:hover {

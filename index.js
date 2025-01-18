@@ -41,11 +41,11 @@ function addGamesToPage(games) {
         // set the inner HTML using a template literal to display some info
         // about each game
         gameCard.innerHTML = `
-        <img src ="${game.img}"/>
-        <h1> ${game.name} </h1>
+        <img src ="${game.img}" class = "game-img"/>
+        <h3> ${game.name} </h3>
         <p> ${game.description}</p>  
         <p> Pledged: ${game.pledged}</p>
-        <p> Goal: ${game.goal}</p>
+        <p> Goal: ${game.goal}.</p>
         <p> Backers: ${game.backers}</p>
         `;
 
@@ -157,9 +157,9 @@ const descriptionContainer = document.getElementById("description-container");
 const sumUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal).length;
 
 // create a string that explains the number of unfunded games using the ternary operator
-let unfundedMsg = (sumUnfundedGames == 0)                                         // If there are no UNFUNDED games...
-        ? "All games reached our goal! "                                      // say that we have reached our goal
-        : `${sumUnfundedGames} of our games have not reached out goal!`;          // else, say how many games are UNFUNDED
+let unfundedMsg = (sumUnfundedGames == 0)                                                               // If there are no UNFUNDED games...
+        ? "All games reached our goal! "                                                                // say that we have reached our goal
+        : `${sumUnfundedGames} of our games have not reached out goal. Please give us a hand!`;         // else, say how many games are UNFUNDED
 
 // create a new DOM element containing the template string and append it to the description container
 const msg = document.createElement("div");
