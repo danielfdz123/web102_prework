@@ -159,7 +159,7 @@ const sumUnfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal).len
 // create a string that explains the number of unfunded games using the ternary operator
 let unfundedMsg = (sumUnfundedGames == 0)                                                               // If there are no UNFUNDED games...
         ? "All games reached our goal! "                                                                // say that we have reached our goal
-        : `${sumUnfundedGames} of our games have not reached out goal. Please give us a hand!`;         // else, say how many games are UNFUNDED
+        : `${sumUnfundedGames} of our games have not reached our goal. Please give us a hand!`;         // else, say how many games are UNFUNDED
 
 // create a new DOM element containing the template string and append it to the description container
 const msg = document.createElement("div");
