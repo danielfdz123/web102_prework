@@ -34,7 +34,8 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+- When creating new elements, it was a bit tricky fior me  
+
 
 ## License
 

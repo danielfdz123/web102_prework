@@ -80,3 +80,14 @@ button {
     margin: 1%;
     border-radius: 7px;
 }
+
+button:hover {
+    box-shadow: 0 0 30px lightblue;
+    cursor: pointer;
+}
+
+button:active {
+    box-shadow: 0 0 30px rgb(71, 182, 219);
+    background-color: lightblue;
+    color: white;
+}
