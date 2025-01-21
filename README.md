@@ -36,7 +36,9 @@ GIF created with ...
 
 ## Notes
 
-- When creating new elements, it was a bit tricky fior me
+- CREATING NEW ELEMENTS: A bit tricky for me to get it working at times, but i believe I have a solid understanding of them now after using the resources provided and working with them for a good bunch within this project.
+- FILTER FUNCTION: Was something new to me, however using the provided resourses it made it much more clearer for me to understand how it works
+- MODALS: Worked with them only using jsx and html in previous projects, but not once in js. However using similar structure from the code and my knowledge on modals, I was able to get the result i wanted, which was for the single game view cards.
 
 ## License
 
