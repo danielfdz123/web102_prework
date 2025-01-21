@@ -44,19 +44,59 @@ function addGamesToPage(games) {
         <img src ="${game.img}" class = "game-img"/>
         <h3> ${game.name} </h3>
         <p> ${game.description}</p>  
-        <p> Pledged: ${game.pledged}</p>
-        <p> Goal: ${game.goal}.</p>
-        <p> Backers: ${game.backers}</p>
+        <p> <u> Pledged:</u> ${game.pledged}</p>
+        <p> <u> Goal:</u> ${game.goal}</p>
+        <p> <u> Backers:</u> ${game.backers}</p>
         `;
+
+        // prompts the opening/closing of the modal (singleGameView) for easier visibility
+        gameCard.addEventListener("click", () => {
+            opensingGameView(game);
+        });
 
         // append the game to the games-container
         gamesContainer.appendChild(gameCard);
     }                                                       
 }
+
+// allows us to see the details of each individual game using modal
+const singGameView = document.getElementById("singGameView");
+
+// function to open/close the single game view and populate the modal with corresponding game details
+function opensingGameView(game) {
+    
+    // grab the modal content
+    const gameDetails = singGameView.querySelector(".gameDetails");
+
+    // using innerHTML to set game info which will be displayed (exactly as when we see them on the UI)
+    gameDetails.innerHTML = `
+        <span class="close-btn" id="closeModal"> Click here, or off this window to close </span>
+        <h1>${game.name}</h1>
+        <img src="${game.img}" class="game-img"/>
+        <p>${game.description}</p>
+        <p> <u> Pledged:</u> ${game.pledged}</p>
+        <p> <u> Goal:</u> ${game.goal}</p>
+        <p> <u> Backers:</u> ${game.backers}</p>
+    `;
+
+    // show the modal when clicked
+    singGameView.style.display = "block";
+
+    // closes singleGameView modal when clicked anywhere outside the modal (or on the X)
+    document.getElementById("closeModal").addEventListener("click", function() {
+        singGameView.style.display = "none";
+    });
+
+    window.onclick = function(event) {
+        if(event.target == singGameView) {
+            singGameView.style = "none"
+        }
+    }
+}
+
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 addGamesToPage(GAMES_JSON);
-
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the

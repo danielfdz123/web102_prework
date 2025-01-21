@@ -91,3 +91,31 @@ button:active {
     background-color: lightblue;
     color: white;
 }
+
+/* singleGameView (modal) css */
+.modal {
+    display: none;          /* modal will always be closed until game card is clicked */
+    position: fixed;
+    text-align: center;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+  
+.gameDetails {
+    margin: 4% auto;                  /* modal position */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+  
+.close-btn:hover {
+    color: #8d8b8b;
+    cursor: pointer;
+    font-weight: bold;
+}
